@@ -7,7 +7,6 @@ import statistics
 import pandas as pd
 
 class Analysis():
-    # config_path = ['configuration/system_config.yml', 'configuration/user_config.yml']
 
     def __init__(self, analysis_config: str) -> None:
         CONFIG_PATHS = ['configs\system_config.yml', 'configs\user_config.yml']
