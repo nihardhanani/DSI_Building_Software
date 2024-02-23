@@ -10,15 +10,22 @@ class Analysis():
     # config_path = ['configuration/system_config.yml', 'configuration/user_config.yml']
 
     def __init__(self, analysis_config: str) -> None:
+        CONFIG_PATHS = ['configs/system_config.yml', 'configs/user_config.yml']
+
+        # add the analysis config to the list of paths to load
+        paths = CONFIG_PATHS + [analysis_config]
+
+        # initialize empty dictionary to hold the configuration
         config = {}
-        config_path = ['configuration/system_config.yml', 'configuration/user_config.yml']
 
         # load each config file and update the config dictionary
-        for path in config_path :
+        for path in paths:
             with open(path, 'r') as f:
-                configur = yaml.safe_load(f)
-            config.update(configur)
+                this_config = yaml.safe_load(f)
+            config.update(this_config)
+
         self.config = config
+
         
     def load_data(self) -> None:
         ''' Request data from Spotify API
