@@ -10,7 +10,7 @@ class Analysis():
     # config_path = ['configuration/system_config.yml', 'configuration/user_config.yml']
 
     def __init__(self, analysis_config: str) -> None:
-        CONFIG_PATHS = ['configs/system_config.yml', 'configs/user_config.yml']
+        CONFIG_PATHS = ['configuration/system_config.yml', 'configuration/user_config.yml']
 
         # add the analysis config to the list of paths to load
         paths = CONFIG_PATHS + [analysis_config]
