@@ -14,7 +14,7 @@ class Analysis():
         config_path = ['configuration/system_config.yml', 'configuration/user_config.yml']
 
         # load each config file and update the config dictionary
-        for path in self.config_path :
+        for path in config_path :
             with open(path, 'r') as f:
                 configur = yaml.safe_load(f)
             config.update(configur)
